@@ -1,3 +1,6 @@
+学习TypeScript  React  react的materialui   web的Flex 
+数据库熟练
+
 安装
 1. 安装node.js
 2. 通过npm安装react   本次安装17.0.2版本
