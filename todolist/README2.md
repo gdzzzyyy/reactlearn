@@ -1,3 +1,16 @@
+windows git注意：
+遇到vscode 发生让你确认 make sure you configure your 'user.name' and 'user.email'
+---> 解决方案  
+打开本地安装的git/bin目录
+git config --global user.email "you email"
+git config --global user.name "you name"
+
+本次版本管理：
+1. node:      16.14.2
+2. npm：       8.5.0
+3. TypeScript: 4.6.2
+4. React:     18.2.0
+
 安装
 1. 安装node.js
 2. 通过npm安装react   本次安装17.0.2版本

@@ -1,5 +1,5 @@
 import React, {Component, Fragment} from 'react';
-import './style.css';
+import '../style.css';
 
 import TodoItem from './TodoItem';
 
@@ -51,7 +51,11 @@ class TodoList6 extends Component {
                                 </li>*/
                                     <div>
                                         {/*传递属性组件 父属性TodoList6 -> 传递到TodoItem  用的是属性传递*/}
-                                        <TodoItem content={item}/>
+                                        <TodoItem 
+                                            content={item} 
+                                            index={index}
+                                            deleteItem={this.handleItemDelete.bind(this)}    
+                                        />
                                     </div>
                                 )
                             
