@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 //import App from './App';
 //import TodoList from './TodoList';
-import TodoList from './day03/TodoList6';
+import TodoList from './day06/TodoList';
 
 
 //import App from './App';
