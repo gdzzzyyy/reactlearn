@@ -5,10 +5,11 @@
 
 import React, {Component, Fragment} from 'react';
 import '../style.css';
+import axios from 'axios';
 
 import TodoItem from './TodoItem';
 
-class TodoList6 extends Component {
+class TodoList extends Component {
 
     
     //実装　初期化
@@ -66,7 +67,10 @@ class TodoList6 extends Component {
      * setTimeout()などはここで行う
      */
     componentDidMount() {
-        //console.log('componentDidMount');
+        console.log('componentDidMount');
+        axios.get('/api/todolist')
+        .then(() => {alert('succ')})
+        .catch(()=>{alert('error')});
     }
 
     /**
@@ -191,4 +195,4 @@ class TodoList6 extends Component {
     }
 }
 
-export default TodoList6;
+export default TodoList;
