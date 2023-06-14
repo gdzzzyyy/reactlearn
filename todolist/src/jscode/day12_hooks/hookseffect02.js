@@ -2,13 +2,27 @@ import React, {Component, useState, useEffect} from "react";
 import ReactDOM from 'react-dom/client';
 import Button from '@material-ui/core/Button';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
+import { Input, makeStyles } from "@material-ui/core";
+
+const useStyles = makeStyles((theme) => ({
+    root: {
+        '& > *': {
+            margin: theme.spacing(1),
+        },
+    },
+}));
 
 const EffectClass2 = () => {
-    const [count, setCount] = useState(0)
+    const classes = useStyles();
+    const [count, setCount] = useState(0);
+    const [name, setName] = useState({
+        firstName : '',
+        lastName : '',
+    });
 
     useEffect(() => {
         document.title = count + '回クリックされました。';
-    })
+    }, [count])
 
     return (
         <>
@@ -23,6 +37,22 @@ const EffectClass2 = () => {
                     リセット
                 </Button>
             </ButtonGroup>
+
+            <p>'私の名前は:'</p>
+            <form className={classes.root} noValidate autoComplete="off">
+                <Input
+                    placeholder="姓"
+                    value={name.lastName}
+                    onChange={(e) => {setName({...name, lastName: e.target.value})}}>
+                </Input>
+
+                <Input
+                    placeholder="名"
+                    value={name.firstName}
+                    onChange={(e) => {setName({...name, firstName: e.target.value})}}>
+                </Input>
+
+            </form>
         </>
     )
 
