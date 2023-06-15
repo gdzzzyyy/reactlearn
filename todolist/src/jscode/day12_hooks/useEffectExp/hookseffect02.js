@@ -24,6 +24,14 @@ const EffectClass2 = () => {
         document.title = count + '回クリックされました。';
     }, [count])
 
+
+    useEffect(() => {
+        console.log('初め')　　//状態が始めて変化したどうた、実行！　
+        return () => {
+            console.log("取り消し")　　//第二回状態が変化して、先　実行
+        }
+    })
+
     return (
         <>
             <p>{count}回クリックされました。</p>

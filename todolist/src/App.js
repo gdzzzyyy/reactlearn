@@ -25,6 +25,7 @@
 // export default App;
 
 import React, { Component} from "react";
+import Coffee from './jscode/day12_hooks/contextsample/coffee'
 
 class App extends Component {
   render() {
@@ -32,6 +33,7 @@ class App extends Component {
     return (
       <div>
         Hello World!
+        <Coffee />
       </div>
     )
   }
