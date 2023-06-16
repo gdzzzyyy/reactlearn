@@ -1,3 +1,21 @@
+/**
+ *  useCallback 原型 
+const memoizedCallback = useCallback (
+    () => {
+        doSometion(a, b);
+    },
+    [a, b],
+)
+
+ * 这里还牵扯到了React.memo   不是很明白！！！
+ * useCallback(callbackFunction, [deps]);
+ * 
+ * 
+ */
+
+
+
+
 import React, {Component, useCallback, useState} from "react";
 import ReactDOM from 'react-dom/client';
 
@@ -38,7 +56,3 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<Counter />)
 
 
-/**
- * 这里还牵扯到了React.memo   不是很明白！！！
- * useCallback(callbackFunction, [deps]);
- */
