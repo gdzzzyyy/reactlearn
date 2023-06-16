@@ -16,12 +16,19 @@ git config --global user.name "you name"
 2. 通过npm安装react   本次安装17.0.2版本
     npm i react-dom@17.0.2 --legacy-peer-deps
     npm i react@17.0.2 --legacy-peer-deps
+如果下载最新的直接跳到 第六步
 3. npm安装react脚手架 
     npm install -g create-react-app
 4. 在目标文件夹下创建todolist项目
     create-react-app todolist
 5. 运行todolist项目
     cd todolist
+    npm start
+
+6.  注意： 
+    可以用官方的方法下载最新的：
+    npx create-react-app my-app-name
+    cd my-app-name
     npm start
 
 
