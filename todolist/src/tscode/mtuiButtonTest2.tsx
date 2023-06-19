@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function GroupOrientation() {
+const GroupOrientation = () => {
     const classes = useStyles();
     
     return (
@@ -31,5 +31,9 @@ export default function GroupOrientation() {
     )
 }
 
-const root = ReactDOM.createRoot(document.getElementById("root")!);
-root.render(<GroupOrientation />)
+const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
+root.render(
+    <React.StrictMode>
+        <GroupOrientation />
+    </React.StrictMode>
+)
