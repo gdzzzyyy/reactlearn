@@ -1,5 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { Provider} from 'react-redux';
+import {
+    Route,
+    BrowserRouter as Router
+} from "react-router-dom";
 
 import  Tsformtest  from './tscode/Tsformtest'
 
@@ -8,7 +13,13 @@ const root = ReactDOM.createRoot(
   );
 
 root.render (
-    <React.StrictMode>
-        <Tsformtest/>
-    </React.StrictMode>
+    <>
+        {/* <React.StrictMode> */}
+    </>
+   
+    /*
+        <React.StrictMode>
+            <Tsformtest/>
+        </React.StrictMode>
+    */
 )
