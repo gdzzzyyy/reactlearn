@@ -31,9 +31,11 @@ const GroupOrientation = () => {
     )
 }
 
-const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
-root.render(
-    <React.StrictMode>
-        <GroupOrientation />
-    </React.StrictMode>
-)
+// const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
+// root.render(
+//     <React.StrictMode>
+//         <GroupOrientation />
+//     </React.StrictMode>
+// )
+
+export default GroupOrientation;

@@ -47,8 +47,9 @@ const Counter = () => {
     )
 }
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<Counter />)
+// const root = ReactDOM.createRoot(document.getElementById('root'));
+// root.render(<Counter />)
+export default Counter;
 
 /**
  * const [state, dispatch] = useReducer(reducer, '初期値')
