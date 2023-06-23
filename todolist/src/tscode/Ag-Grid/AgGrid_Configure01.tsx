@@ -58,6 +58,9 @@ const AgGrid_Configure01 = () => {
       resizable: true,
       // disable cell data types
       cellDataType: false,
+
+      //根据后面学习sort的代码  只需要在这里加上一个就可以确定排序
+      sortable: true,
     };
   }, []);
   const defaultColGroupDef = useMemo<Partial<ColGroupDef>>(() => {

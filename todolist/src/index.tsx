@@ -28,6 +28,11 @@ import reportWebVitals from "./reportWebVitals";
 
 import  Tsformtest  from './tscode/Tsformtest'
 import AgGrid_Configure01 from './tscode/Ag-Grid/AgGrid_Configure01';
+import AgGrid_Columns_Up_Sort01 from './tscode/Ag-Grid/AgGrid_Columns_Up_Sort01';
+import AgGrid_Columns_Up01 from './tscode/Ag-Grid/AgGrid_Columns_Up01';
+import AgGrid_Column_Events01 from './tscode/Ag-Grid/AgGrid_Column_Events01';
+import AgGrid_Column_Filter01 from './tscode/Ag-Grid/AgGrid_Column_Filter01';
+import AgGrid_Column_Groups01 from './tscode/Ag-Grid/AgGrid_Column_Groups01';
 
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
@@ -55,6 +60,11 @@ root.render (
                 <Route path='/aggrid1' Component={AgGrid01} />
                 <Route path='/aggrid2' Component={AgGrid02} />
                 <Route path='/aggrid_c' Component={AgGrid_Configure01} />
+                <Route path='/aggrid_up' Component={AgGrid_Columns_Up01} />
+                <Route path='/aggrid_upsort' Component={AgGrid_Columns_Up_Sort01} />
+                <Route path='/aggrid_event1' Component={AgGrid_Column_Events01} />
+                <Route path='/aggrid_filter' Component={AgGrid_Column_Filter01} />
+                <Route path='/aggrid_group1' Component={AgGrid_Column_Groups01} />
             </Routes>
         </Router>
     </React.StrictMode>
