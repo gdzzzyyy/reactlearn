@@ -5,7 +5,7 @@ import { createRoot } from 'react-dom/client';
 import { AgGridReact } from 'ag-grid-react';
 import 'ag-grid-community/styles/ag-grid.css';
 import 'ag-grid-community/styles/ag-theme-alpine.css';
-import './styles.css';
+import '../styles.css';
 import {
   ColDef,
   ColGroupDef,
@@ -21,7 +21,7 @@ import {
   GridReadyEvent,
   SortChangedEvent,
 } from 'ag-grid-community';
-import { IOlympicData } from './Data';
+import { IOlympicData } from '../Data';
 import { ModuleRegistry } from 'ag-grid-community';
 
 // Register the required feature modules with the Grid

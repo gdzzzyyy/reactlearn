@@ -5,7 +5,7 @@ import { createRoot } from 'react-dom/client';
 import { AgGridReact } from 'ag-grid-react';
 import 'ag-grid-community/styles/ag-grid.css';
 import 'ag-grid-community/styles/ag-theme-alpine.css';
-import './styles.css';
+import '../styles.css';
 import {
   ColDef,
   ColGroupDef,
@@ -13,31 +13,38 @@ import {
   GridOptions,
   GridReadyEvent,
 } from 'ag-grid-community';
-import { IOlympicData } from './Data';
-import { ModuleRegistry } from 'ag-grid-community';
+import { IOlympicData } from '../Data';
 
-// Register the required feature modules with the Grid
+const columnDefsMedalsIncluded: ColDef[] = [
+  { field: 'athlete' },
+  { field: 'gold' },
+  { field: 'silver' },
+  { field: 'bronze' },
+  { field: 'total' },
+  { field: 'age' },
+  { field: 'country' },
+  { field: 'sport' },
+  { field: 'year' },
+  { field: 'date' },
+];
 
-const getColumnDefs: () => ColDef[] = () => {
-  return [
-    { field: 'athlete', initialWidth: 100, initialSort: 'asc' },
-    { field: 'age' },
-    { field: 'country', initialPinned: 'left' },
-    { field: 'sport' },
-    { field: 'year' },
-    { field: 'date' },
-    { field: 'gold' },
-    { field: 'silver' },
-    { field: 'bronze' },
-    { field: 'total' },
-  ];
-};
+const colDefsMedalsExcluded: ColDef[] = [
+  { field: 'athlete' },
+  { field: 'age' },
+  { field: 'country' },
+  { field: 'sport' },
+  { field: 'year' },
+  { field: 'date' },
+];
 
-const AgGrid_Columns_Up_Sort01 = () => {
+const AgGrid_Columns_Up01 = () => {
   const gridRef = useRef<AgGridReact<IOlympicData>>(null);
   const containerStyle = useMemo(() => ({ width: '100%', height: '100%' }), []);
   const gridStyle = useMemo(() => ({ height: '100%', width: '100%' }), []);
   const [rowData, setRowData] = useState<IOlympicData[]>();
+  const [columnDefs, setColumnDefs] = useState<ColDef[]>(
+    columnDefsMedalsIncluded
+  );
   const defaultColDef = useMemo<ColDef>(() => {
     return {
       initialWidth: 100,
@@ -45,7 +52,6 @@ const AgGrid_Columns_Up_Sort01 = () => {
       resizable: true,
     };
   }, []);
-  const [columnDefs, setColumnDefs] = useState<ColDef[]>(getColumnDefs());
 
   const onGridReady = useCallback((params: GridReadyEvent) => {
     fetch('https://www.ag-grid.com/example-assets/olympic-winners.json')
@@ -53,28 +59,32 @@ const AgGrid_Columns_Up_Sort01 = () => {
       .then((data: IOlympicData[]) => setRowData(data));
   }, []);
 
-  const onBtWithDefault = useCallback(() => {
-    gridRef.current!.api.setColumnDefs(getColumnDefs());
-  }, []);
+  const onBtExcludeMedalColumns = useCallback(() => {
+    gridRef.current!.api.setColumnDefs(colDefsMedalsExcluded);
+  }, [colDefsMedalsExcluded]);
 
-  const onBtRemove = useCallback(() => {
-    gridRef.current!.api.setColumnDefs([]);
-  }, []);
+  const onBtIncludeMedalColumns = useCallback(() => {
+    gridRef.current!.api.setColumnDefs(columnDefsMedalsIncluded);
+  }, [columnDefsMedalsIncluded]);
 
   return (
     <div style={containerStyle}>
       <div className="test-container">
         <div className="test-header">
-          <button onClick={onBtWithDefault}>Set Columns with Initials</button>
-          <button onClick={onBtRemove}>Remove Columns</button>
+          <button onClick={onBtExcludeMedalColumns}>
+            Exclude Medal Columns
+          </button>
+          <button onClick={onBtIncludeMedalColumns}>
+            Include Medal Columns
+          </button>
         </div>
 
         <div style={gridStyle} className="ag-theme-alpine">
           <AgGridReact<IOlympicData>
             ref={gridRef}
             rowData={rowData}
-            defaultColDef={defaultColDef}
             columnDefs={columnDefs}
+            defaultColDef={defaultColDef}
             onGridReady={onGridReady}
           ></AgGridReact>
         </div>
@@ -83,4 +93,4 @@ const AgGrid_Columns_Up_Sort01 = () => {
   );
 };
 
-export default AgGrid_Columns_Up_Sort01;
+export default AgGrid_Columns_Up01;
