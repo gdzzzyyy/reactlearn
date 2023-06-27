@@ -36,6 +36,7 @@ import AgGrid_Columns_Up01 from './tscode/Ag-Grid/Column/AgGrid_Columns_Up01';
 import AgGrid_Columns_Up_Sort01 from './tscode/Ag-Grid/Column/AgGrid_Columns_Up_Sort01';
 import AgGrid_Column_Events01 from './tscode/Ag-Grid/Column/AgGrid_Column_Events01';
 import AgGrid_Column_Filter01 from './tscode/Ag-Grid/Column/AgGrid_Column_Filter01';
+import ShowBtnPage from './TestPj/ShowBtnPage';
 
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
@@ -70,7 +71,7 @@ root.render (
                 <Route path='/aggrid_group1' Component={AgGrid_Column_Groups01} />
                 <Route path='/aggrid_hearder1' Component={AgGrid_Column_Hearder01} />
                 <Route path='/aggrid_group2' Component={AgGrid_Row_Group2} />
-                
+                <Route path='/showbtnpage' Component={ShowBtnPage} />
             </Routes>
         </Router>
     </React.StrictMode>
