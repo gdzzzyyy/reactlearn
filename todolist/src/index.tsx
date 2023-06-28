@@ -37,6 +37,8 @@ import AgGrid_Columns_Up_Sort01 from './tscode/Ag-Grid/Column/AgGrid_Columns_Up_
 import AgGrid_Column_Events01 from './tscode/Ag-Grid/Column/AgGrid_Column_Events01';
 import AgGrid_Column_Filter01 from './tscode/Ag-Grid/Column/AgGrid_Column_Filter01';
 import ShowBtnPage from './TestPj/ShowBtnPage';
+import AgGrid_Row_Hight1 from './tscode/Ag-Grid/Row/AgGrid_Row_Hight1';
+import Mui_Check1 from './tscode/MaterialUI/Mui_Check1';
 
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
@@ -72,6 +74,8 @@ root.render (
                 <Route path='/aggrid_hearder1' Component={AgGrid_Column_Hearder01} />
                 <Route path='/aggrid_group2' Component={AgGrid_Row_Group2} />
                 <Route path='/showbtnpage' Component={ShowBtnPage} />
+                <Route path='/aggrid_rowh1' Component={AgGrid_Row_Hight1} />
+                <Route path='/muicheck1' Component={Mui_Check1} />
             </Routes>
         </Router>
     </React.StrictMode>
