@@ -6,7 +6,8 @@ import {
     Route,
     Routes,
     NavLink,
-    BrowserRouter
+    BrowserRouter,
+    useNavigate
 } from "react-router-dom";
 import TimesFunc from './tscode/Hooks/useMemots01';
 import GroupOrientation from './tscode/MaterialUI/mtuiButtonTest2';
@@ -32,8 +33,15 @@ import routerformts01 from "./tscode/router/routerformts01";
 
 
 const PageGoTo = () => {
+
+    const navigate = useNavigate();
+
     const dialogBtn = () =>{
-        return <Route path="/muidialog1"  Component={Mui_SelectDialog01} />
+        console.log("aaaaaa")
+        //return <Route path="/muidialog1"  Component={Mui_SelectDialog01} />
+        
+        navigate('./tscode/MaterialUI/Mui_SelectDialog01')
+        
     }
 
     return (

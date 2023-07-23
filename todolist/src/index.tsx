@@ -56,7 +56,7 @@ root.render (
     */
 
     //使用Route的方式 路由
-    <React.StrictMode>
+    <Router>
         <PageGoTo />
         {/* <Router>
             <Routes>
@@ -83,7 +83,7 @@ root.render (
                 <Route path='/muidialog1' Component={Mui_SelectDialog01} /> 
             </Routes>
         </Router>*/}
-    </React.StrictMode>
+    </Router>
 
     
 );
