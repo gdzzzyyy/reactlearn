@@ -30,6 +30,8 @@ import TsUseCallback02 from "./tscode/Hooks/TsUseCallback02";
 import TsUseHooks01 from "./tscode/Hooks/TsUseHooks01";
 import Mui_Check1 from "./tscode/MaterialUI/Mui_Check1";
 import routerformts01 from "./tscode/router/routerformts01";
+import HitAndBlowGame from "./HitAndBlowGame";
+import HitAndBlowGame2 from "./HitAndBlowGamejilu";
 
 
 const PageGoTo = () => {
@@ -46,12 +48,12 @@ const PageGoTo = () => {
 
     return (
         <Fragment>
-            <ButtonGroup variant="outlined">
+            {/* <ButtonGroup variant="outlined">
                 <Button onClick={dialogBtn}>One</Button>
                 <Button>Two</Button>
                 <Button>Three</Button>
-            </ButtonGroup>
-
+            </ButtonGroup> */}
+            <HitAndBlowGame2 />
         </ Fragment>
 
 
